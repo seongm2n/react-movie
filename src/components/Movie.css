@@ -13,10 +13,8 @@
 img {
 	border-radius: 30px;
 }
-
 .movie {
-	margin: auto;
-	margin-right: 10px;
+	height: 345px;
 }
 
 .movie .movie__data {
@@ -40,4 +38,10 @@ img {
 .movie .movie__img img {
 	display: block;
 	border-radius: 8px;
+}
+
+.outside {
+	width: 230px;
+	height: 345px;
+	margin: 10px 0px 0px 10px;
 }

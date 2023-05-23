@@ -4,7 +4,7 @@ import './Movie.css';
 
 function Movie({ id, coverImg, title, description_full, genres, year }) {
 	return (
-		<div>
+		<div className="outside">
 			{/* <div className='movie__swipe'></div> */}
 			<div className='movie'>
 				<div className="movie__img">
