@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './Detail.css';
 
 function Detail({ id, coverImg, title, description_full, genres, year }) {
 	return (

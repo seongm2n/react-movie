@@ -31,15 +31,17 @@ function MovieDetail() {
 					<span className='loader__text'>Loading...</span>
 				</div>
 			) : (
-				<Detail
-					key={movie.id}
-					id={movie.id}
-					coverImg={movie.medium_cover_image}
-					title={movie.title}
-					year={movie.year}
-					description_full={movie.description_full}
-					genres={movie.genres}
-				/>
+				<div className='movie'>
+					<Detail
+						key={movie.id}
+						id={movie.id}
+						coverImg={movie.medium_cover_image}
+						title={movie.title}
+						year={movie.year}
+						description_full={movie.description_full}
+						genres={movie.genres}
+					/>
+				</div>
 			)}
 		</div>
 	);

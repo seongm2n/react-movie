@@ -1,3 +1,43 @@
+.container {
+	background-color: rgba(149, 32, 80, 0.4);
+	margin: 0;
+}
+.movies {
+	margin-right: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+img {
+	border-radius: 30px;
+}
+
 .movie {
-	border: 1px solid red;
+	margin: auto;
+	margin-right: 10px;
+}
+
+.movie .movie__data {
+	transform: translate(0, -100%);
+	padding: 10px;
+	color: #fff;
+	font-size: 4px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 1;
+}
+
+.movie:hover .movie__data {
+	opacity: 1;
+}
+
+.movie .movie__img {
+	position: relative;
+}
+
+.movie .movie__img img {
+	display: block;
+	border-radius: 8px;
 }
