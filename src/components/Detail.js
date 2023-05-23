@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-function Movie({ id, coverImg, title, description_full, genres, year }) {
+function Detail({ id, coverImg, title, description_full, genres, year }) {
 	return (
 		<div>
-			<Link to={`/movie/${id}`}>
-				<img
-					src={coverImg}
-					alt={title}
-				/>
-			</Link>
+			<img
+				src={coverImg}
+				alt={title}
+			/>
+
 			<h2>{title}</h2>
 			<h3>{year}</h3>
 			<p>{description_full}</p>
@@ -22,7 +20,7 @@ function Movie({ id, coverImg, title, description_full, genres, year }) {
 	);
 }
 
-Movie.propTypes = {
+Detail.propTypes = {
 	id: PropTypes.number.isRequired,
 	coverImg: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
@@ -31,4 +29,4 @@ Movie.propTypes = {
 	genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default Movie;
+export default Detail;

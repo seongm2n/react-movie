@@ -8,7 +8,8 @@ function Home() {
 	const getMovies = async () => {
 		const json = await (
 			await fetch(
-				`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5=&sort_by=year`
+				`https://yts-proxy.nomadcoders1.now.sh/list_movies.json
+				?minimum_rating=6.9&sort_by=year&query_term=2023`
 			)
 		).json();
 		setMovies(json.data.movies);
@@ -19,25 +20,27 @@ function Home() {
 	}, []);
 
 	return (
-		<div>
+		<section className='container'>
 			{loading ? (
-				<h1>Loading...</h1>
+				<div className='loader'>
+					<span className='loader__text'> Loading...</span>
+				</div>
 			) : (
-				<div>
+				<div className='movies'>
 					{movies.map((movie) => (
 						<Movie
 							key={movie.id}
 							id={movie.id}
 							coverImg={movie.medium_cover_image}
 							title={movie.title}
-							year={movie.year}
-							summary={movie.summary}
+							// year={movie.year}
+							// description_full={movie.description_full}
 							genres={movie.genres}
 						/>
 					))}
 				</div>
 			)}
-		</div>
+		</section>
 	);
 }
 
