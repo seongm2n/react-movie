@@ -17,13 +17,10 @@ const MovieCard = styled.div`
 	}
 	&:hover div {
 		transition: opacity 0.3s ease;
-		opacity: 1;
+		opacity: 2;
 		background-color: #fee25b;
 		border-radius: 30px;
 	}
-`;
-const MovieImg = styled.div`
-	position: relative;
 `;
 
 const Img = styled.img`
@@ -48,32 +45,34 @@ const MovieData = styled.div`
 
 const MovieTitle = styled.h2`
 	margin: 20px;
+	color: gray;
 `;
 
 function Movie({ id, coverImg, title, description_full, genres, year }) {
 	return (
 		<MovieCover>
 			{/* <div className='movie__swipe'></div> */}
-			<MovieCard>
-				<MovieImg>
+			<Link to={`/movie/${id}`}>
+				<MovieCard>
 					<Link to={`/movie/${id}`}>
 						<Img
 							src={coverImg}
 							alt={title}
 						/>
 					</Link>
-				</MovieImg>
-				<MovieData>
-					<MovieTitle className='movie__title'>{title}</MovieTitle>
-					<h3 className='movie__year'>{year}</h3>
-					<p className='movie__description'>{description_full}</p>
-					<ul className='genres'>
-						{genres.map((g) => (
-							<li key={g}>{g}</li>
-						))}
-					</ul>
-				</MovieData>
-			</MovieCard>
+
+					<MovieData>
+						<MovieTitle className='movie__title'>{title}</MovieTitle>
+						<h3 className='movie__year'>{year}</h3>
+						<p className='movie__description'>{description_full}</p>
+						<ul className='genres'>
+							{genres.map((g) => (
+								<li key={g}>{g}</li>
+							))}
+						</ul>
+					</MovieData>
+				</MovieCard>
+			</Link>
 		</MovieCover>
 	);
 }

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-	position: fixed;
 	width: 100%;
 	/* font-family: var(--nav-font); */
 	justify-content: space-between;
