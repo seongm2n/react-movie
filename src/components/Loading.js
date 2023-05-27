@@ -1,23 +1,53 @@
-import styled from 'styled-components';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+
+const Container = styled.div`
+	height: 100vh;
+	background-color: #f4edab;
+`;
+
+const ProgressContainer = styled.div`
+	// margin-top: 400px;
+	height: 10px;
+	width: 100%;
+	border: 10px solid #f4a261;
+	border-radius: 15px;
+`;
+
+const progressAnimation = keyframes`
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+`;
+const ProgressColor = styled.div`
+	position: absolute;
+	background-color: #ffffff;
+	width: 0px;
+	height: 10px;
+	border-radius: 15px;
+	animation: ${progressAnimation} 4s infinite linear;
+`;
 
 function Loading() {
-	return <Loader>나옵니당</Loader>;
+	return (
+		<Container>
+			<ProgressContainer>
+				<ProgressColor />
+			</ProgressContainer>
+		</Container>
+	);
 }
 
 export default Loading;
-
-const Loader = styled.button`
-	height: 40px;
-	width: 40px;
-	background: rgba(0, 0, 0, 0.2);
-	border-radius: 50%;
-	border: 2px solid rgba(0, 0, 0, 0.4);
-	border-top-color: #fff;
-	border-bottom-color: #fff;
-	animation: spinner3 800ms ease infinite;
-
-  @keyframes spinner3 {
-    to {
-    transform: rotate(360deg);
-    }
-`;
