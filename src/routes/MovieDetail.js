@@ -39,6 +39,7 @@ function MovieDetail() {
 						coverImg={movie.medium_cover_image}
 						title={movie.title}
 						year={movie.year}
+						rating={movie.rating}
 						description_full={movie.description_full}
 						genres={movie.genres}
 					/>
