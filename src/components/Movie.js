@@ -8,17 +8,24 @@ const MovieCover = styled.div`
 	margin: 10px 0px 0px 10px;
 	position: relative;
 	cursor: pointer;
+	border-radius: 30px;
 `;
 
 const MovieCard = styled.div`
 	&:hover {
+		transition: all 0.3s ease;
+		transform: translateY(-5px);
+		box-shadow: 4px 12px 20px 6px rgba(0, 0, 0, 0.5);
 		opacity: 0.3;
-	}
-	&:hover div {
-		transition: opacity 0.3s ease;
-		opacity: 2;
-		background-color: #fee25b;
 		border-radius: 30px;
+	}
+	& a {
+		width: 230px;
+		height: 345px;
+	}
+
+	&:hover div {
+		opacity: 1;
 	}
 `;
 
@@ -44,7 +51,13 @@ const MovieData = styled.div`
 
 const MovieTitle = styled.h2`
 	margin: 20px;
-	color: gray;
+	color: black;
+`;
+
+const Genres = styled.ul`
+	color: black;
+	list-style: none;
+	padding: 0;
 `;
 
 function Movie({ id, coverImg, title, description_full, genres, year }) {
@@ -64,11 +77,11 @@ function Movie({ id, coverImg, title, description_full, genres, year }) {
 						<MovieTitle className='movie__title'>{title}</MovieTitle>
 						<h3 className='movie__year'>{year}</h3>
 						<p className='movie__description'>{description_full}</p>
-						<ul className='genres'>
+						<Genres>
 							{genres.map((g) => (
 								<li key={g}>{g}</li>
 							))}
-						</ul>
+						</Genres>
 					</MovieData>
 				</MovieCard>
 			</Link>

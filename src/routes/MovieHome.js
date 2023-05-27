@@ -51,7 +51,7 @@ function MovieHome() {
 export default MovieHome;
 
 const Container = styled.section`
-	background-color: lightgray;
+	// background-color: lightgray;
 	margin: 0;
 `;
 

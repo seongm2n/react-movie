@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Nav = styled.nav`
-	position: fixed;
+	// position: fixed;
 	top: 0;
 	width: 100%;
 	justify-content: space-between;
@@ -91,9 +91,11 @@ const CategoryList = styled.ul`
 
 function Navbar() {
 	const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
 	const handleCategoryClick = () => {
 		setIsCategoryOpen(!isCategoryOpen);
 	};
+
 	return (
 		<Nav>
 			<NavbarLogoMenu>

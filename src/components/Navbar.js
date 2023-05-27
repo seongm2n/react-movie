@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-	position: fixed;
+	// position: fixed;
 	top: 0;
 	width: 100%;
 	justify-content: space-between;

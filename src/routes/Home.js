@@ -31,15 +31,13 @@ function Home() {
 				) : (
 					<Movies>
 						<Navbar />
-					
+
 						{movies.map((movie) => (
 							<Movie
 								key={movie.id}
 								id={movie.id}
 								coverImg={movie.medium_cover_image}
 								title={movie.title}
-								// year={movie.year}
-								// description_full={movie.description_full}
 								genres={movie.genres}
 							/>
 						))}
