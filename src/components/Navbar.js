@@ -29,8 +29,12 @@ const NavbarLogo = styled.div`
 	font-weight: 900;
 	font-size: 50px;
 	line-height: 61px;
-	color: #fee25b;
-	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	& a {
+		text-decoration: none;
+		color: #fee25b;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
 `;
 const NavbarMenu = styled.li`
 	display: flex;
@@ -48,13 +52,20 @@ const NavbarMenuItem = styled.li`
 		background-color: #fee25b;
 		border-radius: 4px;
 	}
+	& a {
+		text-decoration: none;
+		color: #fee25b;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
 `;
 
 function Navbar() {
 	return (
 		<Nav>
 			<NavbarLogoMenu>
-				<NavbarLogo>MinBox</NavbarLogo>
+				<NavbarLogo>
+					<Link to={`/`}>MinBox</Link>
+				</NavbarLogo>
 				<NavbarMenu>
 					<NavbarMenuItem>
 						<Link to='/'>Home</Link>

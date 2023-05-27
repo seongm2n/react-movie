@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Movie from '../components/Movie';
 import Navbar from '../components/Navbar';
 import Loading from '../components/Loading';
+import SwipeImage from '../components/SwipeImage';
 
 function Home() {
 	const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ function Home() {
 				) : (
 					<Movies>
 						<Navbar />
+					
 						{movies.map((movie) => (
 							<Movie
 								key={movie.id}
@@ -51,7 +53,7 @@ function Home() {
 export default Home;
 
 const Container = styled.section`
-	background-color: lightgray;
+	// background-color: lightgray;
 	margin: 0;
 `;
 
