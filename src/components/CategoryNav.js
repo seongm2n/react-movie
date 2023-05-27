@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Nav = styled.nav`
 	position: fixed;
-	top: 0;
 	width: 100%;
 	justify-content: space-between;
 	background-color: rgba(149, 32, 80, 0.6);
@@ -32,12 +31,14 @@ const NavbarLogo = styled.div`
 	color: #fee25b;
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
+
 const NavbarMenu = styled.li`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	list-style: none;
 `;
+
 const NavbarMenuItem = styled.li`
 	padding: 8px 12px;
 	font-weight: 900;
@@ -50,18 +51,30 @@ const NavbarMenuItem = styled.li`
 	}
 `;
 
+const Category = styled.section`
+	display: flex;
+`;
+
+const NavPosition = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
 function Navbar() {
 	return (
 		<Nav>
 			<NavbarLogoMenu>
 				<NavbarLogo>MinBox</NavbarLogo>
 				<NavbarMenu>
-					<NavbarMenuItem>
-						<Link to='/'>Home</Link>
-					</NavbarMenuItem>
-					<NavbarMenuItem>
-						<Link to='/movie'>Movie</Link>
-					</NavbarMenuItem>
+					<NavPosition>
+						<NavbarMenuItem>
+							<Link to='/'>Home</Link>
+						</NavbarMenuItem>
+						<Category>
+							category
+							<option>dfdf</option>
+						</Category>
+					</NavPosition>
 				</NavbarMenu>
 			</NavbarLogoMenu>
 		</Nav>

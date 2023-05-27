@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import Movie from '../components/Movie';
-import Navbar from '../components/Navbar';
+import CategoryNav from '../components/CategoryNav';
+import Loading from '../components/Loading';
 
 function MovieHome() {
 	const [loading, setLoading] = useState(true);
@@ -22,14 +24,12 @@ function MovieHome() {
 
 	return (
 		<div>
-			<Navbar />
-			<section className='container'>
+			<Container>
 				{loading ? (
-					<div className='loader'>
-						<span className='loader__text'> Loading...</span>
-					</div>
+					<Loading />
 				) : (
-					<div className='movies'>
+					<Movies>
+						<CategoryNav />
 						{movies.map((movie) => (
 							<Movie
 								key={movie.id}
@@ -41,11 +41,24 @@ function MovieHome() {
 								genres={movie.genres}
 							/>
 						))}
-					</div>
+					</Movies>
 				)}
-			</section>
+			</Container>
 		</div>
 	);
 }
 
 export default MovieHome;
+
+const Container = styled.section`
+	background-color: lightgray;
+	margin: 0;
+`;
+
+const Movies = styled.div`
+	margin-right: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+`;

@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Detail from '../components/Detail';
+import Navbar from '../components/Navbar';
+import Loading from '../components/Loading';
 
 function MovieDetail() {
 	const [loading, setLoading] = useState(true);
@@ -27,11 +29,10 @@ function MovieDetail() {
 	return (
 		<div className='movie__detail'>
 			{loading ? (
-				<div className='loader'>
-					<span className='loader__text'>Loading...</span>
-				</div>
+				<Loading />
 			) : (
 				<div className='movie'>
+					<Navbar />
 					<Detail
 						key={movie.id}
 						id={movie.id}
