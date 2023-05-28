@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Detail from '../components/Detail';
 import Navbar from '../components/Navbar';
 import Loading from '../components/Loading';
+import styled from 'styled-components';
 
 function MovieDetail() {
 	const [loading, setLoading] = useState(true);
@@ -27,12 +28,12 @@ function MovieDetail() {
 	}, [id]);
 
 	return (
-		<div className='movie__detail'>
+		<Container>
+			<Navbar />
 			{loading ? (
 				<Loading />
 			) : (
 				<div className='movie'>
-					<Navbar />
 					<Detail
 						key={movie.id}
 						id={movie.id}
@@ -45,8 +46,15 @@ function MovieDetail() {
 					/>
 				</div>
 			)}
-		</div>
+		</Container>
 	);
 }
 
 export default MovieDetail;
+
+const Container = styled.section`
+	background-color: #dbb8c6;
+	overflow: hidden;
+	height: 100vh;
+	margin: 0;
+`;

@@ -3,13 +3,14 @@ import styled, { keyframes } from 'styled-components';
 
 const Container = styled.div`
 	height: 100vh;
-	background-color: #bf7996;
+	background-color: #dbb8c6;
 `;
 
 const ProgressContainer = styled.div`
 	// margin-top: 400px;
 	height: 10px;
 	width: 100%;
+	max-width: 100%;
 	border: 10px solid #fee25b;
 	border-radius: 15px;
 `;

@@ -29,11 +29,11 @@ function Category() {
 	return (
 		<div>
 			<Container>
+				<CategoryNav />
 				{loading ? (
 					<Loading />
 				) : (
 					<Movies>
-						<CategoryNav />
 						<CategoryName>🍿 {category} 🍿</CategoryName>
 						<div
 							style={{

@@ -7,7 +7,6 @@ import Loading from '../components/Loading';
 function MovieHome() {
 	const [loading, setLoading] = useState(true);
 	const [movies, setMovies] = useState([]);
-	const [selectedCategory, setSelectedCategory] = useState('all');
 
 	//async - await
 	const getMovies = async () => {
@@ -31,25 +30,16 @@ function MovieHome() {
 					<Loading />
 				) : (
 					<Movies>
-						<CategoryNav
-							selectedCategory={selectedCategory}
-							onCategoryChange={setSelectedCategory}
-						/>
-						{movies
-							.filter(
-								(movie) =>
-									selectedCategory === 'all' ||
-									movie.genres.includes(selectedCategory)
-							)
-							.map((movie) => (
-								<Movie
-									key={movie.id}
-									id={movie.id}
-									coverImg={movie.medium_cover_image}
-									title={movie.title}
-									genres={movie.genres}
-								/>
-							))}
+						<CategoryNav />
+						{movies.map((movie) => (
+							<Movie
+								key={movie.id}
+								id={movie.id}
+								coverImg={movie.medium_cover_image}
+								title={movie.title}
+								genres={movie.genres}
+							/>
+						))}
 					</Movies>
 				)}
 			</Container>
