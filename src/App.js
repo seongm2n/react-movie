@@ -8,7 +8,6 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				
 				<Route
 					path='/movie/:id'
 					element={<MovieDetail />}
@@ -18,12 +17,12 @@ function App() {
 					element={<MovieHome />}
 				/>
 				<Route
-					path={'/:category'}
-					element={<Category />}
-				/>
-				<Route
 					path='/'
 					element={<Home />}
+				/>
+				<Route
+					path={'/:category'}
+					element={<Category />}
 				/>
 			</Routes>
 		</BrowserRouter>
