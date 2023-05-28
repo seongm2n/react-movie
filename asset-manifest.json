@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-road/static/css/main.1272803d.css",
-    "main.js": "/react-road/static/js/main.5724a900.js",
+    "main.js": "/react-road/static/js/main.d4dbde54.js",
     "index.html": "/react-road/index.html",
     "main.1272803d.css.map": "/react-road/static/css/main.1272803d.css.map",
-    "main.5724a900.js.map": "/react-road/static/js/main.5724a900.js.map"
+    "main.d4dbde54.js.map": "/react-road/static/js/main.d4dbde54.js.map"
   },
   "entrypoints": [
     "static/css/main.1272803d.css",
-    "static/js/main.5724a900.js"
+    "static/js/main.d4dbde54.js"
   ]
 }
