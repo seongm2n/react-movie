@@ -49,7 +49,7 @@ const NavbarMenuItem = styled.li`
 	text-decoration: none;
 
 	&:hover {
-		background-color: #fee25b;
+		background-color: #dbb8c6;
 		border-radius: 4px;
 	}
 	& a {

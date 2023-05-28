@@ -58,10 +58,10 @@ const NavbarMenuItem = styled.li`
 		text-decoration: none;
 		color: #fee25b;
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-		&:hover {
-			text-decoration: underline;
-		}
+	}
+	&:hover {
+		background-color: #dbb8c6;
+		border-radius: 4px;
 	}
 `;
 const CategoryList = styled.ul`
