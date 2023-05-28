@@ -8,10 +8,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route
-					path='/'
-					element={<Home />}
-				/>
+				
 				<Route
 					path='/movie/:id'
 					element={<MovieDetail />}
@@ -23,6 +20,10 @@ function App() {
 				<Route
 					path={'/:category'}
 					element={<Category />}
+				/>
+				<Route
+					path='/'
+					element={<Home />}
 				/>
 			</Routes>
 		</BrowserRouter>
