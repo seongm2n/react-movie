@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Movie from '../components/Movie';
 import Navbar from '../components/Navbar';
 import Loading from '../components/Loading';
-import SwipeImage from '../components/SwipeImage';
 
 function Home() {
 	const [loading, setLoading] = useState(true);
@@ -51,7 +50,8 @@ function Home() {
 export default Home;
 
 const Container = styled.section`
-	// background-color: lightgray;
+	background-color: #dbb8c6;
+
 	margin: 0;
 `;
 

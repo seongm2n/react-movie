@@ -127,10 +127,6 @@ function Navbar() {
 							<li>
 								<Link to='/Music'>Music</Link>
 							</li>
-
-							<li>
-								<Link to='/Thriller'>Thriller</Link>
-							</li>
 							<li>
 								<Link to='/Action'>Action</Link>
 							</li>
@@ -139,9 +135,6 @@ function Navbar() {
 								<Link to='/Drama'>Drama</Link>
 							</li>
 
-							<li>
-								<Link to='/History'>History</Link>
-							</li>
 							<li>
 								<Link to='/Sport'>Sport</Link>
 							</li>

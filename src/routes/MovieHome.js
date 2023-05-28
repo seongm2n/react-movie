@@ -7,6 +7,8 @@ import Loading from '../components/Loading';
 function MovieHome() {
 	const [loading, setLoading] = useState(true);
 	const [movies, setMovies] = useState([]);
+	const [selectedCategory, setSelectedCategory] = useState('all');
+
 	//async - await
 	const getMovies = async () => {
 		const json = await (
@@ -29,18 +31,25 @@ function MovieHome() {
 					<Loading />
 				) : (
 					<Movies>
-						<CategoryNav />
-						{movies.map((movie) => (
-							<Movie
-								key={movie.id}
-								id={movie.id}
-								coverImg={movie.medium_cover_image}
-								title={movie.title}
-								// year={movie.year}
-								// description_full={movie.description_full}
-								genres={movie.genres}
-							/>
-						))}
+						<CategoryNav
+							selectedCategory={selectedCategory}
+							onCategoryChange={setSelectedCategory}
+						/>
+						{movies
+							.filter(
+								(movie) =>
+									selectedCategory === 'all' ||
+									movie.genres.includes(selectedCategory)
+							)
+							.map((movie) => (
+								<Movie
+									key={movie.id}
+									id={movie.id}
+									coverImg={movie.medium_cover_image}
+									title={movie.title}
+									genres={movie.genres}
+								/>
+							))}
 					</Movies>
 				)}
 			</Container>
@@ -51,7 +60,7 @@ function MovieHome() {
 export default MovieHome;
 
 const Container = styled.section`
-	// background-color: lightgray;
+	background-color: #dbb8c6;
 	margin: 0;
 `;
 
