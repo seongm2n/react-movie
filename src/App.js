@@ -21,7 +21,7 @@ function App() {
 					element={<Home />}
 				/>
 				<Route
-					path={'/:category'}
+					path='/:category'
 					element={<Category />}
 				/>
 			</Routes>
