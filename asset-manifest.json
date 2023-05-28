@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-road/static/css/main.1272803d.css",
-    "main.js": "/react-road/static/js/main.d4dbde54.js",
-    "index.html": "/react-road/index.html",
-    "main.1272803d.css.map": "/react-road/static/css/main.1272803d.css.map",
-    "main.d4dbde54.js.map": "/react-road/static/js/main.d4dbde54.js.map"
+    "main.css": "/seongm2n/react-movie/static/css/main.1272803d.css",
+    "main.js": "/seongm2n/react-movie/static/js/main.386b6cbb.js",
+    "index.html": "/seongm2n/react-movie/index.html",
+    "main.1272803d.css.map": "/seongm2n/react-movie/static/css/main.1272803d.css.map",
+    "main.386b6cbb.js.map": "/seongm2n/react-movie/static/js/main.386b6cbb.js.map"
   },
   "entrypoints": [
     "static/css/main.1272803d.css",
-    "static/js/main.d4dbde54.js"
+    "static/js/main.386b6cbb.js"
   ]
 }
