@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-function Detail({
+const Detail = ({
 	id,
 	coverImg,
 	title,
@@ -9,7 +9,7 @@ function Detail({
 	genres,
 	year,
 	rating,
-}) {
+}) => {
 	return (
 		<DetailPage>
 			<img
@@ -38,7 +38,7 @@ function Detail({
 			</div>
 		</DetailPage>
 	);
-}
+};
 
 Detail.propTypes = {
 	id: PropTypes.number.isRequired,

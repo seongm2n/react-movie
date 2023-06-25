@@ -2,9 +2,48 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+const Movie = ({ id, coverImg, title, description_full, genres, year }) => {
+	return (
+		<MovieCover>
+			{/* <div className='movie__swipe'></div> */}
+			<Link to={`/movie/${id}`}>
+				<MovieCard>
+					<Link to={`/movie/${id}`}>
+						<Img
+							src={coverImg}
+							alt={title}
+						/>
+					</Link>
+
+					<MovieData>
+						<MovieTitle className='movie__title'>{title}</MovieTitle>
+						<h3 className='movie__year'>{year}</h3>
+						<p className='movie__description'>{description_full}</p>
+						<Genres>
+							{genres.map((g) => (
+								<li key={g}>{g}</li>
+							))}
+						</Genres>
+					</MovieData>
+				</MovieCard>
+			</Link>
+		</MovieCover>
+	);
+};
+
+Movie.propTypes = {
+	id: PropTypes.number.isRequired,
+	coverImg: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	year: PropTypes.number.isRequired,
+	description_full: PropTypes.string.isRequired,
+	genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+export default Movie;
 const MovieCover = styled.div`
-	width: 230px;
-	height: 345px;
+	// width: 230px;
+	// height: 345px;
 	margin: 10px 0px 0px 10px;
 	position: relative;
 	cursor: pointer;
@@ -59,43 +98,3 @@ const Genres = styled.ul`
 	list-style: none;
 	padding: 0;
 `;
-
-function Movie({ id, coverImg, title, description_full, genres, year }) {
-	return (
-		<MovieCover>
-			{/* <div className='movie__swipe'></div> */}
-			<Link to={`/movie/${id}`}>
-				<MovieCard>
-					<Link to={`/movie/${id}`}>
-						<Img
-							src={coverImg}
-							alt={title}
-						/>
-					</Link>
-
-					<MovieData>
-						<MovieTitle className='movie__title'>{title}</MovieTitle>
-						<h3 className='movie__year'>{year}</h3>
-						<p className='movie__description'>{description_full}</p>
-						<Genres>
-							{genres.map((g) => (
-								<li key={g}>{g}</li>
-							))}
-						</Genres>
-					</MovieData>
-				</MovieCard>
-			</Link>
-		</MovieCover>
-	);
-}
-
-Movie.propTypes = {
-	id: PropTypes.number.isRequired,
-	coverImg: PropTypes.string.isRequired,
-	title: PropTypes.string.isRequired,
-	year: PropTypes.number.isRequired,
-	description_full: PropTypes.string.isRequired,
-	genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-export default Movie;

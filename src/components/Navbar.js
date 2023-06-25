@@ -2,12 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+const Navbar = () => {
+	return (
+		<Nav>
+			<NavbarLogoMenu>
+				<NavbarLogo>
+					<Link to={`/`}>MinBox</Link>
+				</NavbarLogo>
+				<NavbarMenu>
+					<NavbarMenuItem>
+						<Link to='/'>Home</Link>
+					</NavbarMenuItem>
+					<NavbarMenuItem>
+						<Link to='/movie'>Movie</Link>
+					</NavbarMenuItem>
+				</NavbarMenu>
+			</NavbarLogoMenu>
+		</Nav>
+	);
+};
+
+export default Navbar;
+
 const Nav = styled.nav`
-	// position: fixed;
-	top: 0;
 	width: 100%;
 	justify-content: space-between;
-	background-color: rgba(149, 32, 80, 0.6);
+	background-color: transparent;
 	align-items: center;
 	padding: 16px;
 	transition: all 300ms ease-in-out;
@@ -58,25 +78,3 @@ const NavbarMenuItem = styled.li`
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 `;
-
-function Navbar() {
-	return (
-		<Nav>
-			<NavbarLogoMenu>
-				<NavbarLogo>
-					<Link to={`/`}>MinBox</Link>
-				</NavbarLogo>
-				<NavbarMenu>
-					<NavbarMenuItem>
-						<Link to='/'>Home</Link>
-					</NavbarMenuItem>
-					<NavbarMenuItem>
-						<Link to='/movie'>Movie</Link>
-					</NavbarMenuItem>
-				</NavbarMenu>
-			</NavbarLogoMenu>
-		</Nav>
-	);
-}
-
-export default Navbar;
