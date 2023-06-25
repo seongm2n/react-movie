@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import CategoryNav from '../components/CategoryNav';
 import Loading from '../components/Loading';
 
-function Category() {
+const Category = () => {
 	const { category } = useParams();
 	const [loading, setLoading] = useState(true);
 	const [movies, setMovies] = useState([]);
@@ -27,45 +27,45 @@ function Category() {
 	}, []);
 
 	return (
-		<div>
-			<Container>
-				<CategoryNav />
-				{loading ? (
-					<Loading />
-				) : (
-					<Movies>
-						<CategoryName>🍿 {category} 🍿</CategoryName>
-						<div
-							style={{
-								display: 'flex',
-								flexDirection: 'row',
-								justifyContent: 'center',
-								flexWrap: 'wrap',
-							}}
-						>
-							{movies
-								.filter((movie) => movie.genres.includes(category))
-								.map((movie) => (
-									<Movie
-										key={movie.id}
-										id={movie.id}
-										coverImg={movie.medium_cover_image}
-										title={movie.title}
-										genres={movie.genres}
-									/>
-								))}
-						</div>
-					</Movies>
-				)}
-			</Container>
-		</div>
+		<Container>
+			{!loading && <CategoryNav />}
+			
+			{loading ? (
+				<Loading />
+			) : (
+				<Movies>
+					<CategoryName>🍿 {category} 🍿</CategoryName>
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'row',
+							justifyContent: 'center',
+							flexWrap: 'wrap',
+						}}
+					>
+						{movies
+							.filter((movie) => movie.genres.includes(category))
+							.map((movie) => (
+								<Movie
+									key={movie.id}
+									id={movie.id}
+									coverImg={movie.medium_cover_image}
+									title={movie.title}
+									genres={movie.genres}
+								/>
+							))}
+					</div>
+				</Movies>
+			)}
+		</Container>
 	);
-}
+};
 
 export default Category;
+
 const Container = styled.section`
 	background-color: #dbb8c6;
-	margin: 0;
+	// margin: auto;
 `;
 
 const Movies = styled.div`

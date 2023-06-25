@@ -34,39 +34,37 @@ function Home() {
 	}, []);
 
 	return (
-		<div>
-			<Container>
-				<Navbar />
-				<MoviesContainer>
-					{loading ? (
-						<Loading />
-					) : (
-						<CustomSwiper
-							navigation={true}
-							pagination={true}
-							loop={true}
-							spaceBetween={10}
-							slidesPerView={1}
-							effect='coverflow'
-							grabCursor={true}
-							autoplay={{ delay: 3000 }}
-						>
-							{movies.map((movie) => (
-								<SwiperSlide key={movie.id}>
-									<Movie
-										key={movie.id}
-										id={movie.id}
-										coverImg={movie.large_cover_image}
-										title={movie.title}
-										genres={movie.genres}
-									/>
-								</SwiperSlide>
-							))}
-						</CustomSwiper>
-					)}
-				</MoviesContainer>
-			</Container>
-		</div>
+		<Container>
+			{!loading && <Navbar />}
+			<MoviesContainer>
+				{loading ? (
+					<Loading />
+				) : (
+					<CustomSwiper
+						navigation={true}
+						pagination={true}
+						loop={true}
+						spaceBetween={10}
+						slidesPerView={1}
+						effect='coverflow'
+						grabCursor={true}
+						autoplay={{ delay: 3000 }}
+					>
+						{movies.map((movie) => (
+							<SwiperSlide key={movie.id}>
+								<Movie
+									key={movie.id}
+									id={movie.id}
+									coverImg={movie.large_cover_image}
+									title={movie.title}
+									genres={movie.genres}
+								/>
+							</SwiperSlide>
+						))}
+					</CustomSwiper>
+				)}
+			</MoviesContainer>
+		</Container>
 	);
 }
 
@@ -74,7 +72,7 @@ export default Home;
 
 const Container = styled.section`
 	background-color: #dbb8c6;
-	overflow: hidden;
+	// overflow: hidden;
 	height: 100vh;
 	margin: 0;
 `;
@@ -86,8 +84,6 @@ const MoviesContainer = styled.div`
 `;
 
 const CustomSwiper = styled(Swiper)`
-	// 스와이퍼 테마에 대한 CSS 스타일을 여기에 추가합니다.
 	background-color: #dbb8c6;
 	--swiper-theme-color: #ffeda0;
-	
 `;

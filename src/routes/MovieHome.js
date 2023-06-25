@@ -25,12 +25,12 @@ function MovieHome() {
 
 	return (
 		<div>
+			{!loading && <CategoryNav />}
 			<Container>
 				{loading ? (
 					<Loading />
 				) : (
 					<Movies>
-						<CategoryNav />
 						{movies.map((movie) => (
 							<Movie
 								key={movie.id}
@@ -50,8 +50,10 @@ function MovieHome() {
 export default MovieHome;
 
 const Container = styled.section`
+	position: relative;
 	background-color: #dbb8c6;
-	margin: 0;
+	margin: auto;
+	overflow: hidden;
 `;
 
 const Movies = styled.div`

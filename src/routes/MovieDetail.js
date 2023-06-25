@@ -29,7 +29,7 @@ function MovieDetail() {
 
 	return (
 		<Container>
-			<Navbar />
+			{!loading && <Navbar />}
 			{loading ? (
 				<Loading />
 			) : (
@@ -54,7 +54,6 @@ export default MovieDetail;
 
 const Container = styled.section`
 	background-color: #dbb8c6;
-	overflow: hidden;
-	height: 100vh;
+	height: 100%;
 	margin: 0;
 `;
