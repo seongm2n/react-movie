@@ -42,8 +42,8 @@ Movie.propTypes = {
 
 export default Movie;
 const MovieCover = styled.div`
-	// width: 230px;
-	// height: 345px;
+	width: 230px;
+	height: 345px;
 	margin: 10px 0px 0px 10px;
 	position: relative;
 	cursor: pointer;

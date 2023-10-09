@@ -51,13 +51,11 @@ export default MovieHome;
 
 const Container = styled.section`
 	position: relative;
-	background-color: #dbb8c6;
 	margin: auto;
 	overflow: hidden;
 `;
 
 const Movies = styled.div`
-	margin-right: 10px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
