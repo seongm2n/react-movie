@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const CategoryNav = () => {
-	const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-
-	const handleCategoryClick = () => {
-		setIsCategoryOpen(!isCategoryOpen);
-	};
-
 	return (
 		<Nav>
 			<NavbarLogoMenu>
@@ -17,7 +11,7 @@ const CategoryNav = () => {
 				</NavbarLogo>
 				<NavbarMenu>
 					<NavbarMenuItem>
-						Genre
+						<h2>Genre</h2>
 						<GenreList>
 							<li>
 								<Link to='/Documentary'>Documentary</Link>
@@ -56,26 +50,25 @@ const CategoryNav = () => {
 export default CategoryNav;
 
 const Nav = styled.nav`
+	margin: auto;
 	width: 100%;
 	justify-content: space-between;
 	background-color: #dbb8c6;
 	align-items: center;
 	padding: 16px;
 	transition: all 300ms ease-in-out;
+	display: flex;
 	z-index: 11;
 `;
 
 const NavbarLogoMenu = styled.div`
 	display: flex;
 	flex-direction: column;
-	text-align: center;
 `;
 
 const NavbarLogo = styled.div`
 	width: 220px;
 	height: 55px;
-	left: 16px;
-	top: 23px;
 	font-family: 'Inter';
 	font-style: italic;
 	font-weight: 900;
@@ -91,35 +84,47 @@ const NavbarLogo = styled.div`
 
 const NavbarMenu = styled.ul`
 	display: flex;
-	padding-left: 0;
 	align-items: center;
 	list-style: none;
 	flex-direction: row;
-	list-style: none;
-	margin-left: 24px;
+	padding:0;
 `;
 
 const NavbarMenuItem = styled.li`
 	position: relative;
-	padding: 8px 12px;
 	font-weight: 900;
 	font-size: 25px;
 
 	& a {
 		text-decoration: none;
 		color: #fee25b;
-		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 	&:hover {
-		// background-color: #fff;
 		border-radius: 4px;
+	}
+	h2 {
+		color: #fee25b;
+		display: flex;
+		flex-direction: row;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 `;
 
 const GenreList = styled.ul`
 	list-style: none;
 	display: flex;
+	flex-direction: row;
 	text-align: center;
 	justify-content: space-between;
-	margin-right: 10px;
+	padding: 0;
+
+	li {
+		text-align: center;
+		padding: 3px 10px;
+		border-radius: 10px;
+		margin-right: 10px;
+	}
+	li:hover {
+		background-color: pink;
+	}
 `;
