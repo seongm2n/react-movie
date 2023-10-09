@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import Movie from '../components/Movie';
 
 import styled from 'styled-components';
-import CategoryNav from '../components/CategoryNav';
 import Loading from '../components/Loading';
+import CategoryDropdown from '../components/CategoryDropdown';
 
 const Category = () => {
 	const { category } = useParams();
@@ -28,13 +28,12 @@ const Category = () => {
 
 	return (
 		<Container>
-			{!loading && <CategoryNav />}
-			
+			{!loading && <CategoryDropdown />}
+
 			{loading ? (
 				<Loading />
 			) : (
 				<Movies>
-					<CategoryName>🍿 {category} 🍿</CategoryName>
 					<div
 						style={{
 							display: 'flex',
@@ -65,7 +64,7 @@ export default Category;
 
 const Container = styled.section`
 	background-color: #dbb8c6;
-	// margin: auto;
+	margin: auto;
 `;
 
 const Movies = styled.div`
