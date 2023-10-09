@@ -49,4 +49,4 @@
 
 ### Deploy
 
-[My dashboard](https://seongm2n.github.io/react-movie)
+[Movie](https://seongm2n.github.io/react-movie)
